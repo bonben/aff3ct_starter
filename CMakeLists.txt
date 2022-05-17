@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.2)
 cmake_policy(SET CMP0054 NEW)
 
-project (blank)
+project (starter)
 
 # Enable C++11
 set(CMAKE_CXX_STANDARD 11)
@@ -14,7 +14,7 @@ set (EXECUTABLE_OUTPUT_PATH bin/)
 set(SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # Specify executable
-add_executable(blank ${SRC_FILES})
+add_executable(starter ${SRC_FILES})
 
 # Configure the AFF3CT library before compiling it
 option(AFF3CT_COMPILE_EXE        ""      OFF            )
@@ -28,4 +28,4 @@ set   (AFF3CT_PREC               "MULTI" CACHE STRING "") # can be '8', '16', '3
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib/aff3ct/)
 
 # Link with AFF3CT
-target_link_libraries(blank PRIVATE aff3ct-static-lib)
+target_link_libraries(starter PRIVATE aff3ct-static-lib)
